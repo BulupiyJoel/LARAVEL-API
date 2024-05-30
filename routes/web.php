@@ -15,5 +15,7 @@ use App\Http\Controllers\API\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [UserController::class,"index"])->name("home");
 
-Route::get('/', [UserController::class,"index"]);
+Route::resource("user",UserController::class);
+

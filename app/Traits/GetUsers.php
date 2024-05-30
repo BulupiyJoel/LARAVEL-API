@@ -8,7 +8,7 @@ use App\Models\User;
 trait GetUsers {
 
     public function getUsers() {
-        return User::all();
+        return User::get(["id","name","email"]);
     }
 
 }

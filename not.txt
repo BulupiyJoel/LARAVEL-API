@@ -1,1 +1,8 @@
 Always add an hidden field _token with csrf_token as value , for every HTML form
+
+ - findOrFail() => If the resource is found it will be retourned , else it will return a 404 Status
+ - a find() => If the resource is found it will be retourned else it will show a error
+
+ //Middleware
+
+ You can specify the middleware for a controller by adding it to it's __constructor
