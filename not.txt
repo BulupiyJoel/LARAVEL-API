@@ -6,3 +6,42 @@ Always add an hidden field _token with csrf_token as value , for every HTML form
  //Middleware
 
  You can specify the middleware for a controller by adding it to it's __constructor
+
+ //Soft-delete
+
+Using the withTrashed() method you can retrieve even the soft deleted resources
+Route::resource('photos', PhotoController::class)->withTrashed(); 
+Also you can specify in the routes where you want the solf deleted to be shown , by default it is edit,show and update
+Adding the except() method you can specify the excepted actions
+
+[RESOURCES] : It is possible to pass an array of resources...
+//All In
+php artisan make:controller PhotoController --model=Photo --resource : this will create the controller and the model at the same time [If you add the --requests flag it will also create the request
+
+//apiResource(Only for API)
+Using this exclude unnecessary routes such as edit,create 
+
+php artisan make:controller PhotoController --api : create the routes for an API RESOURCE controller
+
+Route::resource('photos.comments',PhotoCommentController::class); -> nested resource controller
+
+It will generate a route like photos/{photos}/comments/{comments}
+
+:::https://laravel.com/docs/10.x/controllers#restful-scoping-resource-routes
+
+By Adding the names method to the route resource you may pass an array of action as key and name as value : names(["create" => "addUser"])
+It is also possible to pass to the parameters method a specific name : parameters(["create" => "addUser"])! Wich will modify the parameter name everywhere in the route
+
+//Localizing Resource URIs
+
+    Route::resourceVerbs([
+        'create' => 'crear',
+        'edit' => 'editar',
+    ]);  By adding this in the RouteServiceProvider in the beginning of the boot method
+
+
+
+//Suppelementting Resource Controllers : If you need you better add it before the resource route otherwise it will overwrite the suppelement route : Tip -> Remember to keep your controllers focused. If you find yourself routinely needing methods outside of the typical set of resource actions, consider splitting your controller into two, smaller controllers.
+
+#https://laravel.com/docs/10.x/controllers#singleton-resource-controllers
+

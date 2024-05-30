@@ -17,5 +17,5 @@ use App\Http\Controllers\API\UserController;
 */
 Route::get('/', [UserController::class,"index"])->name("home");
 
-Route::resource("user",UserController::class);
+Route::resource("user.action",UserController::class)->names(["create" => "addUser"])->parameters(["user" => "new"]);
 
