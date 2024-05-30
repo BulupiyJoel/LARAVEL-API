@@ -836,7 +836,7 @@
         <p class="fs-18">Hello world!</p>
         <ul>
             @foreach ($users as $user)
-            <li>{{ $user->name }} <a href="{{ route("user.show",$user) }}">See</a> </li>
+            <li>{{ $user->name }} </li>
             @endforeach
         </ul>
     </div>

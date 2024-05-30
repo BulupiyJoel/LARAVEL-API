@@ -1,0 +1,3 @@
+$uri = $request->path(); : return the request path information
+$ipAddress = $request->ip(); : return the IP of the client that made the request to your application [ips()]
+

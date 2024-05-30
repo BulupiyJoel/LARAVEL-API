@@ -1,0 +1,2 @@
+#https://laravel.com/docs/10.x/blade
+#https://bootcamp.laravel.com/

@@ -1,0 +1,29 @@
+Returning a response : 
+Route::get("/",function () {
+return response("TestResponse",200});
+
+//Hidding attributes 
+By using the protected $hidden = ["attributes"] : will not send the attribute in the serialized representation of the model
+
+If you are redirecting to a route with an "ID" parameter that is being populated from an Eloquent model, you may pass the model itself. The ID will be extracted automatically: 
+
+//For a route with the following URI: /profile/{id} 
+return redirect()->route('profile', [$user]);
+
+
+Sometimes you may need to redirect to a domain outside of your application. You may do so by calling the away method, which creates a RedirectResponse without any additional URL encoding, validation, or verification:
+return redirect()->away('https://www.google.com');
+
+
+Redirecting to a new URL and flashing data to the session are usually done at the same time. Typically, this is done after successfully performing an action when you flash a success message to the session. For convenience, you may create a RedirectResponse instance and flash data to the session in a single, fluent method chain:
+Route::post('/user/profile', function () {
+    return redirect('dashboard')->with('status', 'Profile updated!');
+});
+
+
+You may use the withInput method provided by the RedirectResponse instance to flash the current request's input data to the session before redirecting the user to a new location. This is typically done if the user has encountered a validation error. Once the input has been flashed to the session, you may easily retrieve it during the next request to repopulate the form:
+return back()->withInput();
+
+#https://laravel.com/docs/10.x/responses#file-downloads
+
+#https://laravel.com/docs/10.x/responses#streamed-downloads
