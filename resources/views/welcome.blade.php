@@ -834,12 +834,16 @@
 <body class="">
     <div class="">
         <p class="fs-18">Hello world!</p>
-        <ul>
-            @foreach ($users as $user)
-            <li>{{ $user->name }} </li>
-            @endforeach
-        </ul>
-    </div>
+        @unless ($users)
+            fdfsdfdf
+        @endunless
+        <x-auth.login text="
+            Lorem ipsum dolor sit amet consectetur adipisicing elit." author="JFK"/>
+<script>
+    data = @json($users);
+    data.map((item) => {
+        console.log(item);
+    });
+</script>
 </body>
-
 </html>

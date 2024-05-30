@@ -1,0 +1,35 @@
+#https://livewire.laravel.com/
+@{{...}}
+
+{{ Js:from($arraq) }} : verry useful while workind with JS this Js facade is available in the latest version of laravel
+@verbatim !!!!
+
+
+@auth(guard to check)
+    ...
+@endauth
+
+#https://laravel.com/docs/10.x/blade#loops
+
+#https://laravel.com/docs/10.x/blade#components
+[ Use the protected $except = [] : to hide methods or properties to be rendered in the component template
+/$attributes is a variable available for all component and you can specify attributes of the component inside with their value it's also possible to merge those attributes with the $attributes->merge() method]
+
+If the component property is passed inside the html tag it should start with `:`
+
+<!-- /resources/views/components/alert.blade.php -->
+
+<span class="alert-title">{{ $title }}</span>
+
+<div class="alert alert-danger">
+    {{ $slot }}
+</div>
+
+<x-alert>
+    <x-slot:title>
+        Server Error
+    </x-slot>
+
+    <strong>Whoops!</strong> Something went wrong!
+</x-alert>
+
