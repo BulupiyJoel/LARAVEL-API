@@ -1,0 +1,1 @@
+Always add an hidden field _token with csrf_token as value , for every HTML form
