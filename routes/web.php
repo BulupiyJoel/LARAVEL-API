@@ -19,4 +19,3 @@ Route::get('/', [UserController::class,"index"])->name("home");
 
 
 Route::resource("user.action",UserController::class)->names(["create" => "addUser"])->parameters(["user" => "new"]);
-

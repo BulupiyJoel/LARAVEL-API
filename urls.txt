@@ -1,0 +1,11 @@
+- url()->current() :
+- url()->full() :
+- url()->previous() :
+
+OR Using the URL::current() -> Facade
+
+//Route
+
+- route("name", ["data" => $data])
+
+#https://laravel.com/docs/10.x/urls#signed-urls

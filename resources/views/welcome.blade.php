@@ -838,7 +838,9 @@
             fdfsdfdf
         @endunless
         <x-auth.login text="
-            Lorem ipsum dolor sit amet consectetur adipisicing elit." author="JFK"/>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit." author="JFK"/><br>
+
+        {{ url()->full() }}
 <script>
     data = @json($users);
     data.map((item) => {
