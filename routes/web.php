@@ -15,7 +15,7 @@ use App\Http\Controllers\API\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [UserController::class,"index"])->name("home");
+Route::get('/', [UserController::class,"index"])->name("home")->block(10,10);
 
 
 Route::resource("user.action",UserController::class)->names(["create" => "addUser"])->parameters(["user" => "new"]);

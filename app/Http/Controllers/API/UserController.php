@@ -28,6 +28,7 @@ class UserController extends Controller {
     */
 
     public function index() {
+        //dd($request->session()->all());
         return view('welcome', ['users' => $this->getUsers()]);
     }
 
