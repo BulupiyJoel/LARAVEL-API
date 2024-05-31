@@ -1,0 +1,21 @@
+Sometimes you may wish to stop running validation rules on an attribute after the first validation failure. To do so, assign the bail rule to the attribute: [bail:required]
+#https://laravel.com/docs/10.x/validation#working-with-error-messages
+#https://laravel.com/docs/10.x/localization
+/**
+ * Indicates if the validator should stop on the first rule failure.
+ *
+ * @var bool
+ */
+protected $stopOnFirstFailure = true;
+/**
+ * The URI that users should be redirected to if validation fails.
+ *
+ * @var string
+ */
+protected $redirect = '/dashboard';
+/**
+ * The route that users should be redirected to if validation fails.
+ *
+ * @var string
+ */
+protected $redirectRoute = 'dashboard';
