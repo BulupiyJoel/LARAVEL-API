@@ -1,0 +1,2 @@
+#https://laravel.com/docs/10.x/logging#building-log-stacks
+#https://tools.ietf.org/html/rfc5424
