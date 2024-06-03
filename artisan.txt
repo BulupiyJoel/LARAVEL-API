@@ -1,0 +1,5 @@
+php help <command> : to vie more information about the command
+
+!!!#https://tinkerwell.app/
+
+php artisan make:command <name> : Used to create a new command,stored in app/Console/Commands
