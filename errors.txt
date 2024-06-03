@@ -1,0 +1,21 @@
+The value of the in config/app.php APP_DEBUG should be set to true during local development
+
+To ensure that the Exeption is called just once you may specify the protected $withoutDuplicates = true; in the Handler file
+
+If the report is called on same instance of Exeption, only the first call will be reported
+
+The $levels in the Handler file should tell the application the priority on the exception eg.     protected $levels = [
+        PDOException::class => LogLevel::INFO,
+];
+
+If you wanna ignore a exception add it in (However their still have custom rendering logic ):
+
+ protected $dontReport = [
+    InvalidOrderException::class,
+];
+
+
+Note : - type-hint => type de variable
+       - override => reecrire une method ou variable dans la class enfant
+
+#https://laravel.com/docs/10.x/errors#throttling-reported-exceptions

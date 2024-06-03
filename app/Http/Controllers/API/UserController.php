@@ -28,6 +28,7 @@ class UserController extends Controller {
     */
 
     public function index() {
+        abort(404,"Test is not implemented");
         //dd($request->session()->all());
         return view('welcome', ['users' => $this->getUsers()]);
     }
